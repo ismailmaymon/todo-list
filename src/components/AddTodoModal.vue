@@ -40,8 +40,8 @@
                 <input
                   v-model="name"
                   type="text"
-                  :class="`border mt-2 w-full focus:outline-none px-4 sm:py-2 py-[7px] rounded-lg text-lg ${
-                    errors.name ? 'border-red-500' : 'focus:border-blue-950'
+                  :class="`border block rounded-lg mt-2 px-3 py-2 w-full focus:outline-none transition ${
+                    errors.name ? 'border-red-500' : 'focus:ring-blue-500 focus:ring-2'
                   }`"
                 />
                 <!-- Reserve space for error text with min-height -->
