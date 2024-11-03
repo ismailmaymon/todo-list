@@ -1,8 +1,6 @@
-
-
-  <template>
+<template>
   <div class="relative h-screen">
-    <div class="mx-auto sm:container sm:py-20 py-5 sm:px-5 px-4">
+    <div class="mx-auto sm:container sm:pt-20 sm:pb-8 pb-5 pt-5 sm:px-5 px-4">
       <h1 class="sm:text-3xl text-2xl font-medium text-blue-950">Todo List</h1>
       <div v-if="todoList.length === 0" class="text-blue-950 mt-10 text-center text-2xl">Your todo list is empty.</div>
 
@@ -43,11 +41,11 @@
       </div>
     </div>
     <div>
-      <deleteTodoModal :isModalOpen="deleteModalOpen" :todoToDelete="todoToDelete" @cancel-delete="cancelDelete"
+      <DeleteTodoModal :isModalOpen="deleteModalOpen" :todoToDelete="todoToDelete" @cancel-delete="cancelDelete"
         @confirm-delete="deleteTodo" />
     </div>
     <div>
-      <todoListModal :isModalOpen="addModalOpen" @closeModal="addModalOpen = false" :addTodo="todoList"/>
+      <AddTodoModal :isModalOpen="addModalOpen" @closeModal="addModalOpen = false" :addTodo="todoList"/>
     </div>
     <div class="pt-10">
       <div class="fixed bottom-8 sm:right-10 right-6">
@@ -66,13 +64,13 @@
 </template>
 
 <script>
-import todoListModal from '../components/AddTodoModal.vue';
-import deleteTodoModal from '../components/DeleteTodoModal.vue';
+import AddTodoModal from '../components/AddTodoModal.vue';
+import DeleteTodoModal from '../components/DeleteTodoModal.vue';
 
 export default {
   components: {
-    todoListModal,
-    deleteTodoModal
+    AddTodoModal,
+    DeleteTodoModal
   },
   data() {
     return {
